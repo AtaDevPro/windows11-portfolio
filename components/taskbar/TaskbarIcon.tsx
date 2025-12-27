@@ -3,10 +3,11 @@ import Image from "next/image";
 
 interface TaskbarItemProps {
   icon: string;
-  label: string;
+  label?: string;
   isActive?: boolean;
   onClick: () => void;
   className?: string;
+  sizes?: string;
 }
 
 function TaskbarIcon({
@@ -15,6 +16,7 @@ function TaskbarIcon({
   isActive = false,
   onClick,
   className,
+  sizes = "h-8 w-8",
 }: TaskbarItemProps) {
   return (
     <button
@@ -27,7 +29,7 @@ function TaskbarIcon({
         "group"
       )}
     >
-      <div className="relative h-8 w-8">
+      <div className={`relative ${sizes}`}>
         <Image
           src={icon}
           alt={label}
@@ -37,7 +39,7 @@ function TaskbarIcon({
       </div>
 
       {isActive && (
-        <div className="absolute bottom-1 w-1 h-1 bg-white rounded-full" />
+        <div className="absolute -bottom-0.5 w-3 h-1 bg-white/50 rounded-full" />
       )}
 
       <span className="absolute bottom-14 left-1/2 -translate-x-1/2 px-3 py-1 text-sm bg-black/80 text-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
