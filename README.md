@@ -1,4 +1,4 @@
-cat << 'EOF' > README.md
+
 # Windows 11 Portfolio
 
 A creative personal portfolio website inspired by the **Windows 11** desktop experience.  
@@ -55,4 +55,4 @@ This project showcases modern web development skills including state management,
 Feel free to star ⭐ the repo and watch for updates.
 
 Made with ❤️ using Next.js
-EOF
+
