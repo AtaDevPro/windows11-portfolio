@@ -32,7 +32,7 @@ function TaskbarIcon({
       <div className={`relative ${sizes}`}>
         <Image
           src={icon}
-          alt={label}
+          alt={label ?? ""}
           fill
           className={`object-contain ${className}`}
         />
