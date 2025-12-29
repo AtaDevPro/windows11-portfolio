@@ -1,5 +1,11 @@
 const API_KEY = process.env.NEXT_PUBLIC_NEWSAPI_KEY;
 
+if (!API_KEY) {
+  throw new Error(
+    "NewsAPI key is missing – add NEXT_PUBLIC_NEWSAPI_KEY to environment variables"
+  );
+}
+
 export interface NewsArticle {
   title: string;
   description: string | null;
@@ -24,10 +30,11 @@ export async function getTopHeadlines(
     url += `&category=${category}`;
   }
 
-  const res = await fetch(url);
+  const res = await fetch(url, { next: { revalidate: 3600 } });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch news");
+    const errorText = await res.text();
+    throw new Error(`NewsAPI error: ${res.status} - ${errorText}`);
   }
 
   const data = await res.json();
