@@ -4,6 +4,39 @@ import { useState, useEffect } from "react";
 import { getUserLocation } from "@/lib/api/geolocation";
 import { getCurrentWeather, getForecast } from "@/lib/api/weather";
 
+interface WeatherMain {
+  temp: number;
+  feels_like: number;
+  humidity: number;
+}
+
+interface WeatherItem {
+  main: string;
+  description?: string;
+  icon: string;
+}
+
+interface WeatherSys {
+  country: string;
+}
+
+interface CurrentWeather {
+  name: string;
+  main: WeatherMain;
+  weather: WeatherItem[];
+  sys: WeatherSys;
+}
+
+interface ForecastItem {
+  main: { temp: number };
+  weather: WeatherItem[];
+  dt_txt?: string;
+}
+
+// interface ForecastResponse {
+//   list: ForecastItem[];
+// }
+
 const weatherIcons: Record<string, string> = {
   "01d": "☀️",
   "01n": "🌙",
@@ -33,8 +66,8 @@ const weatherIcons: Record<string, string> = {
  * @return A JSX element that displays the current weather and forecast.
  */
 export default function WeatherWidget() {
-  const [weather, setWeather] = useState<any>(null);
-  const [forecast, setForecast] = useState<any[]>([]);
+  const [weather, setWeather] = useState<CurrentWeather | null>(null);
+  const [forecast, setForecast] = useState<ForecastItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -45,7 +78,7 @@ export default function WeatherWidget() {
           .then(([current, forecastData]) => {
             setWeather(current);
             const daily = forecastData.list
-              .filter((item: any, index: number) => index % 8 === 0)
+              .filter((item: ForecastItem, index: number) => index % 8 === 0)
               .slice(0, 3);
             setForecast(daily);
             setLoading(false);
@@ -82,18 +115,20 @@ export default function WeatherWidget() {
     <div className="bg-white/10 rounded-2xl p-6 text-white">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-medium">
-          {weather.name}, {weather.sys.country}
+          {weather!.name}, {weather!.sys.country}
         </h3>
         <span className="text-4xl">
-          {weatherIcons[weather.weather[0].icon] || "🌤️"}
+          {weatherIcons[weather!.weather[0].icon] || "🌤️"}
         </span>
       </div>
 
       <div className="text-5xl font-bold mb-2">
-        {Math.round(weather.main.temp)}°
+        {Math.round(weather!.main.temp)}°
       </div>
 
-      <div className="text-white/80 mb-6">{weather.weather[0].description}</div>
+      <div className="text-white/80 mb-6">
+        {weather!.weather[0].description}
+      </div>
 
       <div className="grid grid-cols-3 gap-4 text-center">
         {forecast.map((day, i) => (
