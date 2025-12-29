@@ -4,16 +4,22 @@ const API_KEY = process.env.NEWSAPI_KEY;
 
 export async function GET() {
   if (!API_KEY) {
-    return NextResponse.json({ error: "API key missing" }, { status: 500 });
+    return NextResponse.json(
+      { error: "NewsAPI key missing on server" },
+      { status: 500 }
+    );
   }
 
-  const res = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
-  );
+  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
+
+  const res = await fetch(url);
 
   if (!res.ok) {
     const error = await res.json();
-    return NextResponse.json({ error: error.message }, { status: res.status });
+    return NextResponse.json(
+      { error: error.message || "NewsAPI request failed" },
+      { status: res.status }
+    );
   }
 
   const data = await res.json();
