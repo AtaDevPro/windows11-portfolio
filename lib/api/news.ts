@@ -15,6 +15,9 @@ export async function getTopHeadlines(
   country: string = "us",
   category?: string
 ): Promise<NewsArticle[]> {
+  if (!API_KEY) {
+    throw new Error("news API key is missing");
+  }
   let url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_KEY}`;
 
   if (category) {

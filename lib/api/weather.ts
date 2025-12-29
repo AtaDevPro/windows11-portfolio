@@ -30,6 +30,9 @@ export async function getCurrentWeather(
   lat: number,
   lon: number
 ): Promise<WeatherData> {
+  if (!API_KEY) {
+    throw new Error("OpenWeatherMap API key is missing");
+  }
   const res = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=fa`
   );
@@ -42,6 +45,9 @@ export async function getForecast(
   lat: number,
   lon: number
 ): Promise<ForecastData> {
+  if (!API_KEY) {
+    throw new Error("OpenWeatherMap API key is missing");
+  }
   const res = await fetch(
     `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=fa`
   );
