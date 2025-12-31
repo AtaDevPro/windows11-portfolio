@@ -1,11 +1,11 @@
 "use client";
-
 import TaskbarIcon from "../TaskbarIcon";
 
 import { useWidgetStore } from "@/lib/widgetStore";
 
 function Widgets() {
   const { toggle } = useWidgetStore();
+
   return (
     <>
       <div className="lg:flex items-center hidden ">

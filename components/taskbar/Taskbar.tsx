@@ -4,6 +4,7 @@ import { useState } from "react";
 import TaskbarIcon from "./TaskbarIcon";
 import TaskbarTime from "./time/TaskbarTime";
 import Widgets from "./widgets/Widgets";
+import WinStart from "./winStart/WinStart";
 
 function Taskbar() {
   const [openWindows, setOpenWindows] = useState<string[]>([]);
@@ -20,12 +21,7 @@ function Taskbar() {
 
       {/* middle */}
       <div className="flex items-center gap-3 mx-auto">
-        <TaskbarIcon
-          icon="/icons/taskbar/windows.png"
-          label="Start"
-          isActive={openWindows.includes("Start")}
-          onClick={() => toggleWindow("Start")}
-        />
+        <WinStart />
 
         <TaskbarIcon
           icon="/icons/taskbar/searchLight.svg"
