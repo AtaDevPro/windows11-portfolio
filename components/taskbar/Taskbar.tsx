@@ -5,6 +5,7 @@ import TaskbarIcon from "./TaskbarIcon";
 import TaskbarTime from "./time/TaskbarTime";
 import Widgets from "./widgets/Widgets";
 import WinStart from "./winStart/WinStart";
+import Search from "./search/Search";
 
 function Taskbar() {
   const [openWindows, setOpenWindows] = useState<string[]>([]);
@@ -23,13 +24,7 @@ function Taskbar() {
       <div className="flex items-center gap-3 mx-auto">
         <WinStart />
 
-        <TaskbarIcon
-          icon="/icons/taskbar/searchLight.svg"
-          label="Search"
-          isActive={openWindows.includes("Search")}
-          onClick={() => toggleWindow("Search")}
-          className="rotate-y-180"
-        />
+        <Search />
 
         <TaskbarIcon
           icon="/icons/taskbar/copilot.png"

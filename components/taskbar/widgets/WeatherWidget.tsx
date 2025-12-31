@@ -108,7 +108,7 @@ export default function WeatherWidget() {
   }
 
   return (
-    <div className="bg-white/10 rounded-2xl p-6 text-white">
+    <div className="bg-white/10 rounded-2xl p-6 text-white ">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-medium">
           {weather!.name}, {weather!.sys.country}

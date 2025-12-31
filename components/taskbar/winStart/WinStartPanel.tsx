@@ -11,8 +11,8 @@ function WinStartPanel() {
   return (
     <div
       className={`
-    fixed left-0 bottom-16 right-0 md:left-1/3 md:right-auto md:w-1/3 
-    h-[80vh] md:h-2/3 
+    fixed left-0 bottom-16 right-0 md:left-1/4 md:right-auto md:w-2/5 
+    h-[80vh] md:h-3/4 
     bg-black/50 backdrop-blur-2xl z-50
     flex flex-col p-6 md:p-9 rounded-2xl md:rounded-t-2xl
    justify-between
@@ -60,7 +60,7 @@ function WinStartPanel() {
         </div>
 
         {/* apps */}
-        <div className="flex items-center gap-5">
+        <div className="lg:flex items-center gap-5 grid grid-cols-3">
           <Link
             href="https://www.microsoft.com/en-us/edge/"
             target="_blank"
@@ -193,7 +193,7 @@ function WinStartPanel() {
         </div>
 
         <div className="flex items-center justify-between border-t-2 border-gray-600/50 ">
-          <div className="flex items-center gap-3 mt-5">
+          <div className="flex items-center gap-3 mt-3 cursor-pointer  transition-all duration-300 hover:bg-gray-800/50 p-2 rounded-lg">
             <Image
               src="/icons/startmenu/user.png"
               alt="User"
@@ -208,7 +208,7 @@ function WinStartPanel() {
             alt="power"
             width={40}
             height={40}
-            className="brightness-0 invert p-2 cursor-pointer hover:brightness-50 transition-all duration-300 mt-5"
+            className="brightness-0 invert p-2 cursor-pointer hover:brightness-50 transition-all duration-300 mt-3"
           />
         </div>
       </div>

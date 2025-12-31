@@ -1,5 +1,6 @@
 import Desktop from "@/components/desktop/Desktop";
 import Wallpaper from "@/components/desktop/Wallpaper";
+import SearchPanel from "@/components/taskbar/search/SearchPanel";
 
 import WidgetsPanel from "@/components/taskbar/widgets/WidgetsPanel";
 import WinStartPanel from "@/components/taskbar/winStart/WinStartPanel";
@@ -11,6 +12,7 @@ export default function Home() {
       <Desktop />
       <WidgetsPanel />
       <WinStartPanel />
+      <SearchPanel />
     </main>
   );
 }

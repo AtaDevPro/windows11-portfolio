@@ -1,7 +1,6 @@
 "use client";
 
 import TaskbarIcon from "../TaskbarIcon";
-import WinStartPanel from "./WinStartPanel";
 import { useWinStore } from "@/lib/winStore";
 
 function WinStart() {
