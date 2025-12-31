@@ -33,10 +33,6 @@ interface ForecastItem {
   dt_txt?: string;
 }
 
-// interface ForecastResponse {
-//   list: ForecastItem[];
-// }
-
 const weatherIcons: Record<string, string> = {
   "01d": "☀️",
   "01n": "🌙",
