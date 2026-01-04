@@ -8,6 +8,7 @@ import WinStart from "./winStart/WinStart";
 import Search from "./search/Search";
 import Copilot from "./copilot/Copilot";
 import Google from "./google/Google";
+import Edge from "./edge/Edge";
 
 function Taskbar() {
   const [openWindows, setOpenWindows] = useState<string[]>([]);
@@ -37,12 +38,7 @@ function Taskbar() {
           onClick={() => toggleWindow("Explorer")}
         />
 
-        <TaskbarIcon
-          icon="/icons/taskbar/edge.png"
-          label="Microsoft Edge"
-          isActive={openWindows.includes("Edge")}
-          onClick={() => toggleWindow("Edge")}
-        />
+        <Edge />
 
         <TaskbarIcon
           icon="/icons/taskbar/vsCode.ico"
