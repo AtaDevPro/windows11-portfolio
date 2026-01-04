@@ -9,6 +9,7 @@ import Search from "./search/Search";
 import Copilot from "./copilot/Copilot";
 import Google from "./google/Google";
 import Edge from "./edge/Edge";
+import Vscode from "./vscode/Vscode";
 
 function Taskbar() {
   const [openWindows, setOpenWindows] = useState<string[]>([]);
@@ -40,12 +41,7 @@ function Taskbar() {
 
         <Edge />
 
-        <TaskbarIcon
-          icon="/icons/taskbar/vsCode.ico"
-          label="vscode"
-          isActive={openWindows.includes("vscode")}
-          onClick={() => toggleWindow("vscode")}
-        />
+        <Vscode />
 
         <Google />
 

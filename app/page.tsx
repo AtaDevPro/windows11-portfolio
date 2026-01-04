@@ -3,6 +3,7 @@ import Wallpaper from "@/components/desktop/Wallpaper";
 import EdgePanel from "@/components/taskbar/edge/EdgePanel";
 import CopilotPanel from "@/components/taskbar/google/GooglePanel";
 import SearchPanel from "@/components/taskbar/search/SearchPanel";
+import VscodePanel from "@/components/taskbar/vscode/VscodePanel";
 
 import WidgetsPanel from "@/components/taskbar/widgets/WidgetsPanel";
 import WinStartPanel from "@/components/taskbar/winStart/WinStartPanel";
@@ -17,6 +18,7 @@ export default function Home() {
       <SearchPanel />
       <CopilotPanel />
       <EdgePanel />
+      <VscodePanel />
     </main>
   );
 }
