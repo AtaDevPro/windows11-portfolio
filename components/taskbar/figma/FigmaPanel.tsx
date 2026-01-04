@@ -1,11 +1,11 @@
 "use client";
 
-import { useVscodeStore } from "@/lib/vscodeStore";
+import { useFigmaStore } from "@/lib/figmaStore";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-function VscodePanel() {
-  const { isOpen, close } = useVscodeStore();
+function FigmaPanel() {
+  const { isOpen, close } = useFigmaStore();
 
   const [position, setPosition] = useState({ x: 100, y: 50 });
   const [isDragging, setIsDragging] = useState(false);
@@ -61,12 +61,12 @@ function VscodePanel() {
         >
           <div className="flex items-center gap-3">
             <Image
-              src="/icons/taskbar/vsCode.ico"
-              alt="vscode"
+              src="/icons/taskbar/figma.png"
+              alt="figma"
               width={24}
               height={24}
             />
-            <span className="text-white font-medium">VS code</span>
+            <span className="text-white font-medium">Figma</span>
           </div>
           <div className="flex gap-2">
             <button
@@ -85,9 +85,9 @@ function VscodePanel() {
         </div>
 
         <iframe
-          src="https://github1s.com/AtaDevPro/windows11-portfolio"
+          src="https://embed.figma.com/design/Gop3XbyKyvLP4VKtLRYkhx/Untitled?node-id=0-1&embed-host=share"
           className="flex-1 w-full border-0"
-          title="vscode"
+          title="figma"
           sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
         />
       </div>
@@ -95,4 +95,4 @@ function VscodePanel() {
   );
 }
 
-export default VscodePanel;
+export default FigmaPanel;

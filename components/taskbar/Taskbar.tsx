@@ -10,6 +10,7 @@ import Copilot from "./copilot/Copilot";
 import Google from "./google/Google";
 import Edge from "./edge/Edge";
 import Vscode from "./vscode/Vscode";
+import Figma from "./figma/Figma";
 
 function Taskbar() {
   const [openWindows, setOpenWindows] = useState<string[]>([]);
@@ -45,12 +46,7 @@ function Taskbar() {
 
         <Google />
 
-        <TaskbarIcon
-          icon="/icons/taskbar/figma.png"
-          label="Figma"
-          isActive={openWindows.includes("Figma")}
-          onClick={() => toggleWindow("Figma")}
-        />
+        <Figma />
       </div>
 
       {/* right */}
