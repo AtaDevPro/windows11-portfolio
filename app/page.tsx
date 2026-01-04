@@ -1,5 +1,6 @@
 import Desktop from "@/components/desktop/Desktop";
 import Wallpaper from "@/components/desktop/Wallpaper";
+import CopilotPanel from "@/components/taskbar/google/GooglePanel";
 import SearchPanel from "@/components/taskbar/search/SearchPanel";
 
 import WidgetsPanel from "@/components/taskbar/widgets/WidgetsPanel";
@@ -13,6 +14,7 @@ export default function Home() {
       <WidgetsPanel />
       <WinStartPanel />
       <SearchPanel />
+      <CopilotPanel />
     </main>
   );
 }

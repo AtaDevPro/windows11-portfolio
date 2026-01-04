@@ -6,6 +6,8 @@ import TaskbarTime from "./time/TaskbarTime";
 import Widgets from "./widgets/Widgets";
 import WinStart from "./winStart/WinStart";
 import Search from "./search/Search";
+import Copilot from "./copilot/Copilot";
+import Google from "./google/Google";
 
 function Taskbar() {
   const [openWindows, setOpenWindows] = useState<string[]>([]);
@@ -26,12 +28,7 @@ function Taskbar() {
 
         <Search />
 
-        <TaskbarIcon
-          icon="/icons/taskbar/copilot.png"
-          label="Copilot"
-          isActive={openWindows.includes("Copilot")}
-          onClick={() => toggleWindow("Copilot")}
-        />
+        <Copilot />
 
         <TaskbarIcon
           icon="/icons/taskbar/fileExplorer.ico"
@@ -54,12 +51,7 @@ function Taskbar() {
           onClick={() => toggleWindow("vscode")}
         />
 
-        <TaskbarIcon
-          icon="/icons/taskbar/google.svg"
-          label="Google Chrome"
-          isActive={openWindows.includes("Google")}
-          onClick={() => toggleWindow("Google")}
-        />
+        <Google />
 
         <TaskbarIcon
           icon="/icons/taskbar/figma.png"

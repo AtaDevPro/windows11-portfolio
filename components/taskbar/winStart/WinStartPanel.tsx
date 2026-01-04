@@ -12,7 +12,7 @@ function WinStartPanel() {
     <div
       className={`
     fixed left-0 bottom-16 right-0 md:left-1/4 md:right-auto md:w-2/5 
-    h-[80vh] md:h-3/4 
+    h-[80vh] md:h-4/5 
     bg-black/50 backdrop-blur-2xl z-50
     flex flex-col p-6 md:p-9 rounded-2xl md:rounded-t-2xl
    justify-between
@@ -51,10 +51,10 @@ function WinStartPanel() {
           "
         />
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 ">
         <div className="flex justify-between items-center">
-          <span className="text-white text-base">Pinned</span>
-          <span className="text-white text-base px-4 py-2 bg-gray-800/30 hover:bg-gray-800/60 transition-all duration-300  border border-gray-600/50  cursor-pointer rounded-lg">
+          <span className="text-white text-sm">Pinned</span>
+          <span className="text-white text-sm px-3 py-1.5 bg-gray-800/30 hover:bg-gray-800/60 transition-all duration-300  border border-gray-600/50  cursor-pointer rounded-lg">
             All apps
           </span>
         </div>
@@ -69,11 +69,11 @@ function WinStartPanel() {
             <Image
               src="/icons/taskbar/edge.png"
               alt="Edge"
-              width={50}
-              height={50}
+              width={40}
+              height={40}
               className=""
             />
-            <span className="text-white text-sm">Edge</span>
+            <span className="text-white text-xs">Edge</span>
           </Link>
 
           <Link
@@ -84,11 +84,11 @@ function WinStartPanel() {
             <Image
               src="/icons/taskbar/google.svg"
               alt="google"
-              width={50}
-              height={50}
+              width={40}
+              height={40}
               className=""
             />
-            <span className="text-white text-sm">Google</span>
+            <span className="text-white text-xs">Google</span>
           </Link>
 
           <Link
@@ -99,11 +99,11 @@ function WinStartPanel() {
             <Image
               src="/icons/taskbar/vsCode.ico"
               alt="vscode"
-              width={50}
-              height={50}
+              width={40}
+              height={40}
               className=""
             />
-            <span className="text-white text-sm">vscode</span>
+            <span className="text-white text-xs">vscode</span>
           </Link>
 
           <Link
@@ -114,11 +114,11 @@ function WinStartPanel() {
             <Image
               src="/icons/taskbar/copilot.png"
               alt="Copilot"
-              width={50}
-              height={50}
+              width={40}
+              height={40}
               className=""
             />
-            <span className="text-white text-sm">Copilot</span>
+            <span className="text-white text-xs">Copilot</span>
           </Link>
 
           <Link
@@ -129,19 +129,19 @@ function WinStartPanel() {
             <Image
               src="/icons/taskbar/figma.png"
               alt="Figma"
-              width={50}
-              height={50}
+              width={40}
+              height={40}
               className=""
             />
-            <span className="text-white text-sm">Figma</span>
+            <span className="text-white text-xs">Figma</span>
           </Link>
         </div>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 ">
         <div className="flex justify-between items-center">
-          <span className="text-white text-base">Recommended</span>
-          <span className="text-white text-base px-4 py-2 bg-gray-800/30 hover:bg-gray-800/60 transition-all duration-300  border border-gray-600/50  cursor-pointer rounded-lg">
+          <span className="text-white text-sm">Recommended</span>
+          <span className="text-white text-sm px-3 py-1.5 bg-gray-800/30 hover:bg-gray-800/60 transition-all duration-300  border border-gray-600/50  cursor-pointer rounded-lg">
             More
           </span>
         </div>
@@ -154,11 +154,11 @@ function WinStartPanel() {
             <Image
               src="/icons/startmenu/github.png"
               alt="github"
-              width={50}
-              height={50}
+              width={40}
+              height={40}
               className=""
             />
-            <span className="text-white text-sm">Github</span>
+            <span className="text-white text-xs">Github</span>
           </Link>
 
           <Link
@@ -169,11 +169,11 @@ function WinStartPanel() {
             <Image
               src="/icons/ata/ata.jpg"
               alt="my photo"
-              width={50}
-              height={50}
+              width={40}
+              height={40}
               className="rounded-full"
             />
-            <span className="text-white text-sm">Ata</span>
+            <span className="text-white text-xs">Ata</span>
           </Link>
 
           <Link
@@ -184,33 +184,32 @@ function WinStartPanel() {
             <Image
               src="/icons/startmenu/linkedin.png"
               alt="linkedin"
-              width={50}
-              height={50}
-              className=""
-            />
-            <span className="text-white text-sm">Linkedin</span>
-          </Link>
-        </div>
-
-        <div className="flex items-center justify-between border-t-2 border-gray-600/50 ">
-          <div className="flex items-center gap-3 mt-3 cursor-pointer  transition-all duration-300 hover:bg-gray-800/50 p-2 rounded-lg">
-            <Image
-              src="/icons/startmenu/user.png"
-              alt="User"
               width={40}
               height={40}
-              className=" rounded-full bg-gray-600/50 p-2"
+              className=""
             />
-            <span className="text-white text-sm">User</span>
-          </div>
+            <span className="text-white text-xs">Linkedin</span>
+          </Link>
+        </div>
+      </div>
+      <div className="flex items-center justify-between border-t-2 border-gray-600/50 ">
+        <div className="flex items-center gap-3 mt-3 cursor-pointer  transition-all duration-300 hover:bg-gray-800/50 p-2 rounded-lg">
           <Image
-            src="/icons/startmenu/power.png"
-            alt="power"
+            src="/icons/startmenu/user.png"
+            alt="User"
             width={40}
             height={40}
-            className="brightness-0 invert p-2 cursor-pointer hover:brightness-50 transition-all duration-300 mt-3"
+            className=" rounded-full bg-gray-600/50 p-2"
           />
+          <span className="text-white text-sm">User</span>
         </div>
+        <Image
+          src="/icons/startmenu/power.png"
+          alt="power"
+          width={40}
+          height={40}
+          className="brightness-0 invert p-2 cursor-pointer hover:brightness-50 transition-all duration-300 mt-3"
+        />
       </div>
     </div>
   );

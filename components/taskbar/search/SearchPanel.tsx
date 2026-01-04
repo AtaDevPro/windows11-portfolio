@@ -3,41 +3,11 @@
 import { useSearchStore } from "@/lib/searchStore";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
-interface TipProps {
-  quoteText: string;
-  quoteAuthor?: string;
-}
+import { useState } from "react";
 
 function SearchPanel() {
   const { isOpen } = useSearchStore();
   const [search, setSearch] = useState("");
-
-  const [tip, setTip] = useState<TipProps | null>();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch(
-      "https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en"
-    )
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch tip");
-        return res.json();
-      })
-      .then((data: TipProps) => {
-        setTip(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setTip({
-          quoteText: "Keep coding, you're doing great! 💪",
-          quoteAuthor: "Your Portfolio",
-        });
-        setLoading(false);
-      });
-  }, []);
 
   return (
     <div
@@ -116,7 +86,7 @@ function SearchPanel() {
                 height={30}
                 className=""
               />
-              <span className="text-white text-sm">Command Prompt</span>
+              <span className="text-white text-sm">Cmd</span>
             </Link>
 
             <Link
@@ -131,7 +101,7 @@ function SearchPanel() {
                 height={30}
                 className=""
               />
-              <span className="text-white text-sm">Visual Studio 2022</span>
+              <span className="text-white text-sm">Visual Studio</span>
             </Link>
 
             <Link
@@ -185,8 +155,10 @@ function SearchPanel() {
           </div>
           <div className="flex flex-col items-center gap-5 bg-white/10 rounded-2xl p-6">
             <h3 className="text-white font-medium mb-4">Programming Tip</h3>
-            <p className="text-white italic">&quot;{tip?.quoteText}&quot;</p>
-            <p className="text-white/70 text-sm mt-2">— {tip?.quoteAuthor}</p>
+            <p className="text-white italic">
+              &quot;Keep going! You&apos;re awesome 💪&quot;
+            </p>
+            <p className="text-white/70 text-sm mt-2">— Your Portfolio</p>
           </div>
         </div>
       </div>
