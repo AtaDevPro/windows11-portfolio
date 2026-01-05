@@ -51,9 +51,7 @@ function Taskbar() {
 
         <QuickSettings />
 
-        <div className=" flex flex-col items-center text-white text-sm justify-center w-full h-12 px-2 rounded-lg transition-all duration-200 cursor-default hover:bg-white/20 group">
-          <TaskbarTime />
-        </div>
+        <TaskbarTime />
       </div>
     </section>
   );
