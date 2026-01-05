@@ -1,42 +1,46 @@
 import { create } from "zustand";
 
-type Window = {
+export type Window = {
   id: string;
   title: string;
-  component: React.ReactNode;
   icon: string;
-  minimized?: boolean;
+  component: React.ComponentType;
   position?: { x: number; y: number };
   size?: { width: number; height: number };
+  isMinimized?: boolean;
 };
 
-type WindowState = {
+type WindowStore = {
   windows: Window[];
-  openWindow: (window: Omit<Window, "id">) => void;
+  openWindow: (window: Omit<Window, "id" | "position" | "isMinimized">) => void;
   closeWindow: (id: string) => void;
   minimizeWindow: (id: string) => void;
+  updateWindowPosition: (
+    id: string,
+    position: { x: number; y: number }
+  ) => void; // جدید
   bringToFront: (id: string) => void;
 };
 
-export const useWindowStore = create<WindowState>((set) => ({
+export const useWindowStore = create<WindowStore>((set) => ({
   windows: [],
 
-  openWindow: (newWindow) =>
-    set((state) => ({
-      windows: [
-        ...state.windows,
-        {
-          ...newWindow,
-          id: `${newWindow.title}-${Date.now()}`,
-          minimized: false,
-          position: {
-            x: 100 + state.windows.length * 50,
-            y: 50 + state.windows.length * 30,
+  openWindow: (window) =>
+    set((state) => {
+      const newId = `${window.title}-${Date.now()}`;
+      const offset = state.windows.length * 40;
+      return {
+        windows: [
+          ...state.windows,
+          {
+            ...window,
+            id: newId,
+            position: { x: 100 + offset, y: 50 + offset },
+            isMinimized: false,
           },
-          size: { width: 800, height: 400 },
-        },
-      ],
-    })),
+        ],
+      };
+    }),
 
   closeWindow: (id) =>
     set((state) => ({
@@ -46,8 +50,13 @@ export const useWindowStore = create<WindowState>((set) => ({
   minimizeWindow: (id) =>
     set((state) => ({
       windows: state.windows.map((w) =>
-        w.id === id ? { ...w, minimized: !w.minimized } : w
+        w.id === id ? { ...w, isMinimized: true } : w
       ),
+    })),
+
+  updateWindowPosition: (id, position) =>
+    set((state) => ({
+      windows: state.windows.map((w) => (w.id === id ? { ...w, position } : w)),
     })),
 
   bringToFront: (id) =>

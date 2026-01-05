@@ -1,5 +1,6 @@
 import Desktop from "@/components/desktop/Desktop";
 import Wallpaper from "@/components/desktop/Wallpaper";
+
 import EdgePanel from "@/components/taskbar/edge/EdgePanel";
 import FigmaPanel from "@/components/taskbar/figma/FigmaPanel";
 import CopilotPanel from "@/components/taskbar/google/GooglePanel";

@@ -162,7 +162,7 @@ function WinStartPanel() {
           </Link>
 
           <Link
-            href="https://atadev.ir//"
+            href="https://atadev.ir/"
             target="_blank"
             className="flex items-center gap-3 flex-col justify-center rounded-md p-2 hover:bg-gray-800/30 transition-all duration-300  cursor-pointer flex-2"
           >
