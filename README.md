@@ -6,29 +6,36 @@ This project simulates a fully interactive Windows 11-like desktop environment u
 
 ## 🚀 Current Features
 
-- Beautiful Windows 11-themed desktop with custom wallpaper
-- Acrylic-style taskbar with:
-  - Pinned apps (Start, Search, Copilot, File Explorer, Edge, VS Code, Chrome, Figma)
+- Realistic **Windows 11-themed desktop** with custom wallpaper
+- **Acrylic taskbar** with:
+  - Pinned apps (Start, Search, Copilot, File Explorer, Microsoft Edge, VS Code, Chrome, Figma)
+  - Active app indicators
   - System tray (Wi-Fi, volume, battery icons)
-  - Live clock showing real-time based on user's timezone and locale
-- Desktop icons with double-click support
-- Interactive Resume window:
-  - Opens on double-click of the Resume.pdf icon
-  - Title bar with minimize and close buttons
-  - Full-screen resume view
+  - **Live clock** based on user's timezone and locale
+- **Widgets Panel** (slides in from left):
+  - Weather widget with user location and forecast
+  - Photo of the day
+  - Top news headlines
+  - Persian calendar with highlighted today
+- **Interactive windows**:
+  - Resume.pdf window with double-click open
+  - Google Chrome window with real iframe
+  - Draggable windows (title bar drag)
+  - Close button functionality
+- Responsive design (mobile fallback coming soon)
 
 ## 🔨 In Progress / Planned Features
 
-This project is actively being developed and will become much more interactive and feature-rich!
+This project is **actively developed** and will get even closer to the real Windows 11 feel!
 
-- Fully functional **Start Menu**
-- **File Explorer** with real folder navigation (About, Projects, Skills, Contact, etc.)
-- Draggable and resizable windows
-- Multiple open windows with proper z-index management
-- More desktop apps (Browser, Terminal, Settings, Notepad, etc.)
-- Window animations and sound effects (optional)
-- Dark/Light mode toggle matching Windows 11
-- Mobile-responsive fallback view
+- Fully functional **Start Menu** with pinned apps and search
+- **File Explorer** with folder navigation (About, Projects, Skills, Contact)
+- Draggable + **resizable** windows (from edges and corners)
+- Multiple open windows with proper z-index and minimize to taskbar
+- More apps (Terminal, Settings, Notepad, Calculator)
+- Smooth window animations and optional sound effects
+- Dark/Light mode toggle
+- Full mobile responsiveness
 
 ## 🛠️ Tech Stack
 
@@ -40,7 +47,7 @@ This project is actively being developed and will become much more interactive a
 
 ## 🚀 Live Demo
 
-[https://AtaDev.ir](https://AtaDev.ir)  
+[https://win.AtaDev.ir](https://win.AtaDev.ir)  
 
 
 ## 💡 Why This Project?
