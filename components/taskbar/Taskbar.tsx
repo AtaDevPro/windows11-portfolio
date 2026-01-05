@@ -12,6 +12,7 @@ import Edge from "./edge/Edge";
 import Vscode from "./vscode/Vscode";
 import Figma from "./figma/Figma";
 import Lang from "./lang/Lang";
+import QuickSettings from "./quickSettings/QuickSettings";
 
 function Taskbar() {
   const [openWindows, setOpenWindows] = useState<string[]>([]);
@@ -48,29 +49,7 @@ function Taskbar() {
       <div className="lg:flex items-center gap-2 hidden">
         <Lang />
 
-        <div className=" flex items-center  justify-center rounded-lg transition-all duration-200 hover:bg-white/20">
-          <TaskbarIcon
-            icon="/icons/taskbar/wifi.png"
-            isActive={openWindows.includes("settings")}
-            onClick={() => toggleWindow("settings")}
-            sizes="w-6 h-6"
-            className="-translate-y-0.5"
-          />
-
-          <TaskbarIcon
-            icon="/icons/taskbar/volume.svg"
-            isActive={openWindows.includes("settings")}
-            onClick={() => toggleWindow("settings")}
-            sizes="w-5 h-5"
-          />
-
-          <TaskbarIcon
-            icon="/icons/taskbar/battery.png"
-            isActive={openWindows.includes("settings")}
-            onClick={() => toggleWindow("settings")}
-            sizes="w-6 h-6"
-          />
-        </div>
+        <QuickSettings />
 
         <div className=" flex flex-col items-center text-white text-sm justify-center w-full h-12 px-2 rounded-lg transition-all duration-200 cursor-default hover:bg-white/20 group">
           <TaskbarTime />
