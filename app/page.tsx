@@ -3,6 +3,7 @@ import Wallpaper from "@/components/desktop/Wallpaper";
 import EdgePanel from "@/components/taskbar/edge/EdgePanel";
 import FigmaPanel from "@/components/taskbar/figma/FigmaPanel";
 import CopilotPanel from "@/components/taskbar/google/GooglePanel";
+import LangPanel from "@/components/taskbar/lang/LangPanel";
 import SearchPanel from "@/components/taskbar/search/SearchPanel";
 import VscodePanel from "@/components/taskbar/vscode/VscodePanel";
 
@@ -21,6 +22,7 @@ export default function Home() {
       <EdgePanel />
       <VscodePanel />
       <FigmaPanel />
+      <LangPanel />
     </main>
   );
 }

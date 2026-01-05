@@ -11,6 +11,7 @@ import Google from "./google/Google";
 import Edge from "./edge/Edge";
 import Vscode from "./vscode/Vscode";
 import Figma from "./figma/Figma";
+import Lang from "./lang/Lang";
 
 function Taskbar() {
   const [openWindows, setOpenWindows] = useState<string[]>([]);
@@ -33,13 +34,6 @@ function Taskbar() {
 
         <Copilot />
 
-        <TaskbarIcon
-          icon="/icons/taskbar/fileExplorer.ico"
-          label="File Explorer"
-          isActive={openWindows.includes("Explorer")}
-          onClick={() => toggleWindow("Explorer")}
-        />
-
         <Edge />
 
         <Vscode />
@@ -52,9 +46,7 @@ function Taskbar() {
       {/* right */}
 
       <div className="lg:flex items-center gap-2 hidden">
-        <span className=" flex items-center text-white text-sm justify-center px-6 h-12  rounded-lg transition-all duration-200 cursor-default hover:bg-white/20 group">
-          ENG
-        </span>
+        <Lang />
 
         <div className=" flex items-center  justify-center rounded-lg transition-all duration-200 hover:bg-white/20">
           <TaskbarIcon
